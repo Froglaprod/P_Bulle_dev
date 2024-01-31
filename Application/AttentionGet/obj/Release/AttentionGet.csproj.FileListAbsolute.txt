@@ -1,0 +1,2 @@
+C:\Users\po66qga\Documents\P-BulleDocker\AttentionGet\AttentionGet\obj\Release\AttentionGet.csproj.AssemblyReference.cache
+C:\Users\po66qga\Documents\P-BulleDocker\AttentionGet\AttentionGet\obj\Release\AttentionGet.csproj.SuggestedBindingRedirects.cache
