@@ -50,7 +50,6 @@
             this.Ground.Size = new System.Drawing.Size(820, 67);
             this.Ground.TabIndex = 0;
             this.Ground.TabStop = false;
-            this.Ground.Click += new System.EventHandler(this.Ground_Click);
             // 
             // CactusSimple
             // 
@@ -96,6 +95,7 @@
             // 
             // GameTime
             // 
+            this.GameTime.Enabled = true;
             this.GameTime.Interval = 20;
             this.GameTime.Tick += new System.EventHandler(this.MainGameTimerEvent);
             // 
@@ -112,6 +112,7 @@
             this.Controls.Add(this.CactusDouble);
             this.Name = "Form1";
             this.Text = "T-Rex Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusSimple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusDouble)).EndInit();
