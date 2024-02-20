@@ -49,11 +49,19 @@ namespace AttentionGet
         //Mise a jour du saut (descendre le dino quand il est en l'air)
         public void UpdateJump(int groundTop)
         {
-            //Le dino se remet sur le sol quan il est en l'air
             if (isJumping)
             {
-                trex.Top = -43 + groundTop;
+                //Le dino se remet sur le sol quand il est en l'air
+                while (trex.Top == groundTop - trex.Height)
+                {
+                    trex.Top += 2;
+
+                    Task.Delay(cooldown).Wait();
+                }
+
             }
+           
+           
         }
 
 

@@ -20,6 +20,8 @@ namespace AttentionGet
         private List<Obstacle> obstacleList;
         //Position du top du sol
         private int groundTop;
+        //Etat barre espace
+        private bool spacePressed = false;
 
         //Initialisation du jeu par défault
         public Form1()
@@ -44,6 +46,9 @@ namespace AttentionGet
             // Stockage de la position du top du sol
             groundTop = Ground.Top;
 
+            // Démarrage du timer du jeu
+            GameTime.Start();
+
         }
 
 
@@ -54,9 +59,11 @@ namespace AttentionGet
             if (e.KeyCode == Keys.Space)
             {
                 trex.isJumping = false;
+                trex.Jump();
             }
         }
 
+  
         //Boucle du jeux (s'éxecute à chaque tic du timer)
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
@@ -75,13 +82,16 @@ namespace AttentionGet
                 // Détection collisions obstacles
                 if(trex.trex.Bounds.IntersectsWith(obstacle.obstacle.Bounds))
                 {
-                    GameTime.Enabled = false;
+                    // Jeux s'arrete
+                    GameTime.Stop();
+                    //Change l'image du T-rex
+                    Dino.Image = Properties.Resources.dead;
                 }
 
             }
 
         }
 
-
+       
     }
 }
