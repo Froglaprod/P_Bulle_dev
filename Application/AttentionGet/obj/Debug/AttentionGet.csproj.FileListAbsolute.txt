@@ -19,3 +19,4 @@ C:\Users\pd47qky\Documents\GitHub\P_Bulle_dev\Application\AttentionGet\obj\Debug
 C:\Users\pd47qky\Documents\GitHub\P_Bulle_dev\Application\AttentionGet\obj\Debug\AttentionGet.exe
 C:\Users\pd47qky\Documents\GitHub\P_Bulle_dev\Application\AttentionGet\obj\Debug\AttentionGet.pdb
 C:\Users\pd47qky\Documents\GitHub\P_Bulle_dev\Application\AttentionGet\obj\Debug\AttentionGet.Form1.resources
+C:\Users\pd47qky\Documents\GitHub\P_Bulle_dev\Application\AttentionGet\obj\Debug\AttentionGet.Diplay.Menu.resources

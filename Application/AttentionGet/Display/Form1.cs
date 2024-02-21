@@ -143,8 +143,8 @@ namespace AttentionGet
         private void buttonReplay_Click(object sender, EventArgs e)
         {
             //Variable
-            int speedObstacle = 5;
-            bool gameStatus = true;
+            speedObstacle = 5;
+            gameStatus = true;
             score.score = 0;
 
             //Label
@@ -165,6 +165,7 @@ namespace AttentionGet
             CactusSimple.Location = new Point(504, 345);
 
             GameTime.Start();
+
 
         }
     }

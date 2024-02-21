@@ -121,6 +121,7 @@
             this.buttonReplay.Size = new System.Drawing.Size(98, 25);
             this.buttonReplay.TabIndex = 6;
             this.buttonReplay.Text = "Replay";
+            this.buttonReplay.UseCompatibleTextRendering = true;
             this.buttonReplay.UseVisualStyleBackColor = true;
             this.buttonReplay.Visible = false;
             this.buttonReplay.Click += new System.EventHandler(this.buttonReplay_Click);
