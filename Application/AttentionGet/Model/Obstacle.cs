@@ -13,6 +13,8 @@ namespace AttentionGet
         public PictureBox obstacle;
         //Vitesse d'apparition
         public int speedApparition;
+        //Instance de random
+        public Random random = new Random();
 
         //Caractéristique par défault de l'obstacle
         public Obstacle(PictureBox imageObstacle, int speed)
@@ -28,9 +30,10 @@ namespace AttentionGet
         }
 
         //Rénisialisation de la position de l'obstacle
-        public void Reset(int defaultPosition)
+        public void Reset(int borderRight)
         {
-            obstacle.Left -= defaultPosition;
+            //Changement de la position a une position àléatoire
+            obstacle.Left = borderRight + random.Next(200, 500) + (obstacle.Width * 15);
         }
 
     }

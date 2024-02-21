@@ -20,8 +20,7 @@ namespace AttentionGet
         private List<Obstacle> obstacleList;
         //Position du top du sol
         private int groundTop;
-        //Etat barre espace
-        private bool spacePressed = false;
+
 
         //Initialisation du jeu par défault
         public Form1()
@@ -40,8 +39,8 @@ namespace AttentionGet
             obstacleList = new List<Obstacle>();
 
             //Ajout des obstacles
-            obstacleList.Add(new Obstacle(CactusSimple, 3));
-            obstacleList.Add(new Obstacle(CactusDouble, 3));
+            obstacleList.Add(new Obstacle(CactusSimple, 5));
+            obstacleList.Add(new Obstacle(CactusDouble, 5));
 
             // Stockage de la position du top du sol
             groundTop = Ground.Top;
@@ -52,35 +51,47 @@ namespace AttentionGet
         }
 
 
-        //Vérification de l'entré de l'utilisateur
+        // Active le saut progressif en maintenant la touche espace
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            //Quand on appuie sur "espace" on déclenche le saut
             if (e.KeyCode == Keys.Space)
             {
-                trex.isJumping = false;
-                trex.Jump();
+                trex.isJumping = true;
+                trex.isOnGround = true;
             }
         }
 
-  
+        //Désactive le saut progressif lorsque la touche espace est relachée 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                trex.isJumping = false;
+            }
+        }
+
+
         //Boucle du jeux (s'éxecute à chaque tic du timer)
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
             //Saut du T-rex
-            trex.Jump();
-
-            //Update du jump
-            trex.UpdateJump(groundTop);
+            trex.Jump(groundTop);
 
             //Mise à jour de chaque obstacle
-            foreach(Obstacle obstacle in obstacleList)
+            foreach (Obstacle obstacle in obstacleList)
             {
                 //Déplacement obstacle
                 obstacle.Update();
 
+                //Replacement des obstacles
+                if (obstacle.obstacle.Right < 0)
+                {
+                    // Réinitialise la position de l'obstacle à droite de l'écran
+                    obstacle.Reset(this.ClientSize.Width);
+                }
+
                 // Détection collisions obstacles
-                if(trex.trex.Bounds.IntersectsWith(obstacle.obstacle.Bounds))
+                if (trex.trex.Bounds.IntersectsWith(obstacle.obstacle.Bounds))
                 {
                     // Jeux s'arrete
                     GameTime.Stop();
@@ -92,6 +103,6 @@ namespace AttentionGet
 
         }
 
-       
+
     }
 }

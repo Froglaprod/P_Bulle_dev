@@ -65,7 +65,7 @@
             // CactusDouble
             // 
             this.CactusDouble.Image = ((System.Drawing.Image)(resources.GetObject("CactusDouble.Image")));
-            this.CactusDouble.Location = new System.Drawing.Point(608, 358);
+            this.CactusDouble.Location = new System.Drawing.Point(643, 358);
             this.CactusDouble.Name = "CactusDouble";
             this.CactusDouble.Size = new System.Drawing.Size(32, 33);
             this.CactusDouble.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -105,14 +105,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Dino);
-            this.Controls.Add(this.txtScore);
             this.Controls.Add(this.Ground);
             this.Controls.Add(this.CactusSimple);
             this.Controls.Add(this.CactusDouble);
+            this.Controls.Add(this.Dino);
+            this.Controls.Add(this.txtScore);
             this.Name = "Form1";
             this.Text = "T-Rex Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusSimple)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusDouble)).EndInit();
