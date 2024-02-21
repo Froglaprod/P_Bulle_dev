@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttentionGet.Storage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +19,14 @@ namespace AttentionGet
         private T_rex trex;
         //Liste d'objet liée a l'obstacle
         private List<Obstacle> obstacleList;
+        //Objet liée au score
+        private Score score;
         //Position du top du sol
         private int groundTop;
+        //Vitesse des obstacles
+        private int speedObstacle = 5;
+        //Etat du jeu
+        private bool gameStatus = true;
 
 
         //Initialisation du jeu par défault
@@ -39,8 +46,11 @@ namespace AttentionGet
             obstacleList = new List<Obstacle>();
 
             //Ajout des obstacles
-            obstacleList.Add(new Obstacle(CactusSimple, 5));
-            obstacleList.Add(new Obstacle(CactusDouble, 5));
+            obstacleList.Add(new Obstacle(CactusSimple, speedObstacle));
+            obstacleList.Add(new Obstacle(CactusDouble, speedObstacle));
+
+            //Instanciation du score
+            score = new Score();
 
             // Stockage de la position du top du sol
             groundTop = Ground.Top;
@@ -83,9 +93,13 @@ namespace AttentionGet
                 //Déplacement obstacle
                 obstacle.Update();
 
-                //Replacement des obstacles
+                //Si un obstacles est passé
                 if (obstacle.obstacle.Right < 0)
                 {
+                    // Mise à jour du score
+                    score.score++;
+                    txtScore.Text = "Score: " + score.score;
+
                     // Réinitialise la position de l'obstacle à droite de l'écran
                     obstacle.Reset(this.ClientSize.Width);
                 }
@@ -93,16 +107,65 @@ namespace AttentionGet
                 // Détection collisions obstacles
                 if (trex.trex.Bounds.IntersectsWith(obstacle.obstacle.Bounds))
                 {
+                    gameStatus = false;
+
                     // Jeux s'arrete
                     GameTime.Stop();
+
                     //Change l'image du T-rex
                     Dino.Image = Properties.Resources.dead;
                 }
 
             }
 
+            //La vitesse augmente en fonction du score
+            if (score.score % 6 == 0)
+            {
+                speedObstacle++;
+            }
+
+            //Fin de partie
+            if (!gameStatus)
+            {
+                //Affiche le label GameOver
+                gameOver.Visible = true;
+
+                //Affiche / Active les boutton
+                buttonReplay.Visible = true;
+                buttonReplay.Enabled = true;
+                buttonLeave.Visible = true;
+                buttonLeave.Enabled = true;
+            }
+
         }
 
+        //Relancement du jeux par défault
+        private void buttonReplay_Click(object sender, EventArgs e)
+        {
+            //Variable
+            int speedObstacle = 5;
+            bool gameStatus = true;
+            score.score = 0;
 
+            //Label
+            gameOver.Visible = false;
+            txtScore.Text = "Score: " + score.score;
+
+            //Boutton
+            buttonReplay.Visible = false;
+            buttonReplay.Enabled = false;
+            buttonLeave.Visible = false;
+            buttonLeave.Enabled = false;
+
+            //Image
+            Dino.Image = Properties.Resources.running__1_;
+
+            //Objet
+            CactusDouble.Location = new Point(643, 358);
+            CactusSimple.Location = new Point(504, 345);
+
+            GameTime.Start();
+
+        }
     }
 }

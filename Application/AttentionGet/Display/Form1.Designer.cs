@@ -36,6 +36,9 @@
             this.Dino = new System.Windows.Forms.PictureBox();
             this.txtScore = new System.Windows.Forms.Label();
             this.GameTime = new System.Windows.Forms.Timer(this.components);
+            this.gameOver = new System.Windows.Forms.Label();
+            this.buttonReplay = new System.Windows.Forms.Button();
+            this.buttonLeave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusSimple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusDouble)).BeginInit();
@@ -99,12 +102,49 @@
             this.GameTime.Interval = 20;
             this.GameTime.Tick += new System.EventHandler(this.MainGameTimerEvent);
             // 
+            // gameOver
+            // 
+            this.gameOver.AutoSize = true;
+            this.gameOver.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOver.Location = new System.Drawing.Point(318, 152);
+            this.gameOver.Name = "gameOver";
+            this.gameOver.Size = new System.Drawing.Size(171, 31);
+            this.gameOver.TabIndex = 5;
+            this.gameOver.Text = "Game Over !!!";
+            this.gameOver.Visible = false;
+            // 
+            // buttonReplay
+            // 
+            this.buttonReplay.Enabled = false;
+            this.buttonReplay.Location = new System.Drawing.Point(343, 195);
+            this.buttonReplay.Name = "buttonReplay";
+            this.buttonReplay.Size = new System.Drawing.Size(98, 25);
+            this.buttonReplay.TabIndex = 6;
+            this.buttonReplay.Text = "Replay";
+            this.buttonReplay.UseVisualStyleBackColor = true;
+            this.buttonReplay.Visible = false;
+            this.buttonReplay.Click += new System.EventHandler(this.buttonReplay_Click);
+            // 
+            // buttonLeave
+            // 
+            this.buttonLeave.Enabled = false;
+            this.buttonLeave.Location = new System.Drawing.Point(343, 226);
+            this.buttonLeave.Name = "buttonLeave";
+            this.buttonLeave.Size = new System.Drawing.Size(98, 25);
+            this.buttonLeave.TabIndex = 6;
+            this.buttonLeave.Text = "Exit";
+            this.buttonLeave.UseVisualStyleBackColor = true;
+            this.buttonLeave.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonLeave);
+            this.Controls.Add(this.buttonReplay);
+            this.Controls.Add(this.gameOver);
             this.Controls.Add(this.Ground);
             this.Controls.Add(this.CactusSimple);
             this.Controls.Add(this.CactusDouble);
@@ -131,6 +171,9 @@
         private System.Windows.Forms.PictureBox Dino;
         private System.Windows.Forms.Label txtScore;
         private System.Windows.Forms.Timer GameTime;
+        public System.Windows.Forms.Label gameOver;
+        public System.Windows.Forms.Button buttonReplay;
+        public System.Windows.Forms.Button buttonLeave;
     }
 }
 

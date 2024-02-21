@@ -33,7 +33,7 @@ namespace AttentionGet
         public void Reset(int borderRight)
         {
             //Changement de la position a une position àléatoire
-            obstacle.Left = borderRight + random.Next(200, 500) + (obstacle.Width * 15);
+            obstacle.Left = borderRight + random.Next(200, 300) + (obstacle.Width * 15);
         }
 
     }
