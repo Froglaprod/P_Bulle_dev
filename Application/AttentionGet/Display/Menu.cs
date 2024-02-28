@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttentionGet.Display;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,16 +20,18 @@ namespace AttentionGet.Diplay
 
         private void buttonPlay_Click(object sender, EventArgs e)
         {
-            // Créez une instance de Form1
-            Form1 form1 = new Form1();
+            // Créez une instance de login
+            Login login = new Login();
 
 
             //Desaffiche le menu
             this.Hide();
 
 
-            //Affiche le form1
-            form1.Show();
+            //Affiche le login
+            login.Show();
         }
+
+
     }
 }

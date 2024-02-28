@@ -173,16 +173,18 @@ namespace AttentionGet
         //Reviens au menu principale
         private void buttonLeave_Click(object sender, EventArgs e)
         {
-            // Créez une instance de Form1
+            // Créez une instance de Nenu
             Menuprincipale menu = new Menuprincipale();
 
 
-            //Desaffiche le menu
+            //Desaffiche le form
             this.Hide();
 
 
-            //Affiche le form1
+            //Affiche le menu
             menu.Show();
         }
+
+
     }
 }

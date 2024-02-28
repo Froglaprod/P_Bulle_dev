@@ -30,61 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.Ground = new System.Windows.Forms.PictureBox();
-            this.CactusSimple = new System.Windows.Forms.PictureBox();
-            this.CactusDouble = new System.Windows.Forms.PictureBox();
-            this.Dino = new System.Windows.Forms.PictureBox();
             this.txtScore = new System.Windows.Forms.Label();
             this.GameTime = new System.Windows.Forms.Timer(this.components);
             this.gameOver = new System.Windows.Forms.Label();
             this.buttonReplay = new System.Windows.Forms.Button();
             this.buttonLeave = new System.Windows.Forms.Button();
+            this.pseudotext = new System.Windows.Forms.Label();
+            this.Ground = new System.Windows.Forms.PictureBox();
+            this.CactusSimple = new System.Windows.Forms.PictureBox();
+            this.CactusDouble = new System.Windows.Forms.PictureBox();
+            this.Dino = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusSimple)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CactusDouble)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dino)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Ground
-            // 
-            this.Ground.BackColor = System.Drawing.Color.Black;
-            this.Ground.Location = new System.Drawing.Point(-9, 391);
-            this.Ground.Name = "Ground";
-            this.Ground.Size = new System.Drawing.Size(820, 67);
-            this.Ground.TabIndex = 0;
-            this.Ground.TabStop = false;
-            // 
-            // CactusSimple
-            // 
-            this.CactusSimple.Image = ((System.Drawing.Image)(resources.GetObject("CactusSimple.Image")));
-            this.CactusSimple.Location = new System.Drawing.Point(504, 345);
-            this.CactusSimple.Name = "CactusSimple";
-            this.CactusSimple.Size = new System.Drawing.Size(23, 46);
-            this.CactusSimple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CactusSimple.TabIndex = 2;
-            this.CactusSimple.TabStop = false;
-            this.CactusSimple.Tag = "obstacle";
-            // 
-            // CactusDouble
-            // 
-            this.CactusDouble.Image = ((System.Drawing.Image)(resources.GetObject("CactusDouble.Image")));
-            this.CactusDouble.Location = new System.Drawing.Point(643, 358);
-            this.CactusDouble.Name = "CactusDouble";
-            this.CactusDouble.Size = new System.Drawing.Size(32, 33);
-            this.CactusDouble.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.CactusDouble.TabIndex = 3;
-            this.CactusDouble.TabStop = false;
-            this.CactusDouble.Tag = "obstacle";
-            // 
-            // Dino
-            // 
-            this.Dino.Image = ((System.Drawing.Image)(resources.GetObject("Dino.Image")));
-            this.Dino.Location = new System.Drawing.Point(86, 348);
-            this.Dino.Name = "Dino";
-            this.Dino.Size = new System.Drawing.Size(40, 43);
-            this.Dino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Dino.TabIndex = 1;
-            this.Dino.TabStop = false;
             // 
             // txtScore
             // 
@@ -138,12 +98,64 @@
             this.buttonLeave.Visible = false;
             this.buttonLeave.Click += new System.EventHandler(this.buttonLeave_Click);
             // 
+            // pseudotext
+            // 
+            this.pseudotext.AutoEllipsis = true;
+            this.pseudotext.AutoSize = true;
+            this.pseudotext.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pseudotext.Location = new System.Drawing.Point(12, 40);
+            this.pseudotext.Name = "pseudotext";
+            this.pseudotext.Size = new System.Drawing.Size(98, 31);
+            this.pseudotext.TabIndex = 7;
+            this.pseudotext.Text = "Pseudo";
+            // 
+            // Ground
+            // 
+            this.Ground.BackColor = System.Drawing.Color.Black;
+            this.Ground.Location = new System.Drawing.Point(-9, 391);
+            this.Ground.Name = "Ground";
+            this.Ground.Size = new System.Drawing.Size(820, 67);
+            this.Ground.TabIndex = 0;
+            this.Ground.TabStop = false;
+            // 
+            // CactusSimple
+            // 
+            this.CactusSimple.Image = ((System.Drawing.Image)(resources.GetObject("CactusSimple.Image")));
+            this.CactusSimple.Location = new System.Drawing.Point(504, 345);
+            this.CactusSimple.Name = "CactusSimple";
+            this.CactusSimple.Size = new System.Drawing.Size(23, 46);
+            this.CactusSimple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CactusSimple.TabIndex = 2;
+            this.CactusSimple.TabStop = false;
+            this.CactusSimple.Tag = "obstacle";
+            // 
+            // CactusDouble
+            // 
+            this.CactusDouble.Image = ((System.Drawing.Image)(resources.GetObject("CactusDouble.Image")));
+            this.CactusDouble.Location = new System.Drawing.Point(643, 358);
+            this.CactusDouble.Name = "CactusDouble";
+            this.CactusDouble.Size = new System.Drawing.Size(32, 33);
+            this.CactusDouble.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.CactusDouble.TabIndex = 3;
+            this.CactusDouble.TabStop = false;
+            this.CactusDouble.Tag = "obstacle";
+            // 
+            // Dino
+            // 
+            this.Dino.Image = ((System.Drawing.Image)(resources.GetObject("Dino.Image")));
+            this.Dino.Location = new System.Drawing.Point(86, 348);
+            this.Dino.Name = "Dino";
+            this.Dino.Size = new System.Drawing.Size(40, 43);
+            this.Dino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Dino.TabIndex = 1;
+            this.Dino.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pseudotext);
             this.Controls.Add(this.buttonLeave);
             this.Controls.Add(this.buttonReplay);
             this.Controls.Add(this.gameOver);
@@ -154,6 +166,7 @@
             this.Controls.Add(this.txtScore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Rex Game";
@@ -179,6 +192,7 @@
         public System.Windows.Forms.Label gameOver;
         public System.Windows.Forms.Button buttonReplay;
         public System.Windows.Forms.Button buttonLeave;
+        public System.Windows.Forms.Label pseudotext;
     }
 }
 
