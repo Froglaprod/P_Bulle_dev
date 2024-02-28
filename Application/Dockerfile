@@ -1,10 +1,11 @@
-# On constructie l'application dans le conteneur 
+# On construie l'application dans le conteneur 
 FROM mono:latest
 
-# On installe les dépendances graphique sur le docker
+# On installe les dépendances graphique nécessaire xming dans le conteneur
 RUN apt-get update && apt-get install -y \
     libgtk2.0-0
 
+# On définit le répertoire de travail du conteneur
 WORKDIR /opt/app 
 
 # On copie les fichiers de l'app dans le conteneur 
