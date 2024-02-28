@@ -136,6 +136,9 @@ namespace AttentionGet
                 buttonReplay.Enabled = true;
                 buttonLeave.Visible = true;
                 buttonLeave.Enabled = true;
+
+                //Insert les donne dans la db
+                score.SaveScore();
             }
 
         }

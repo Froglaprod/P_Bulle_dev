@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AttentionGet",
+    "\\AttentionGet\\Storage"
   ],
   "SelectedNode": "\\AttentionGet.sln",
   "PreviewInSolutionExplorer": false
