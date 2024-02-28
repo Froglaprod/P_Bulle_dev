@@ -3,9 +3,9 @@ version: '3'
 
 # Définit les conteneurs que nous voulons créer
 services:
-# Conteneur MySQL
+  # Conteneur MySQL
   mysql:
-  # Informations liées au conteneur
+    # Informations liées au conteneur
     image: mysql:latest
     container_name: mysql
     # Informations pour l'environnement MySQL
@@ -14,21 +14,30 @@ services:
     ports:
       - "3000:3000"
 
-# Conteneur PhpMyadmin
+  # Conteneur PhpMyadmin
   phpmyadmin:
-  # Informations liées au conteneur
+    # Informations liées au conteneur
     image: phpmyadmin:latest
     container_name: phpmyadmin
     # Informations pour l'environnement PhpMyadmin
     environment:
       # Permet de pouvoir définir des info de connexion
       PMA_ARBITRARY: 1
-      # Adresse du serveur au quelle PhpMyadmin se connecte
+      # Adresse du serveur auquel PhpMyadmin se connecte
       PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: root
     ports:
       - "8080:80"
-      # Assure que MySQL est démarré avant PHPMyAdmin
+    # Assure que MySQL est démarré avant PHPMyAdmin
     depends_on:
       - mysql
+
+  # Conteneur de l'application
+  app:
+    # Informations pour build l'app
+    build:
+      # Permet de définir le répertoire sur lequel Docker se base pour build l'image
+      context: .
+      dockerfile: Dockerfile
+    container_name: dinogame

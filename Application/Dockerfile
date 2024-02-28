@@ -1,4 +1,4 @@
-# On construie l'application dans le conteneur 
+# Import de l'image mono pour construire l'application
 FROM mono:latest
 
 # On installe les dépendances graphique nécessaire xming dans le conteneur
