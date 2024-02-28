@@ -1,6 +1,6 @@
 ﻿namespace AttentionGet.Diplay
 {
-    partial class Menu
+    partial class Menuprincipale
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menuprincipale));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.titel = new System.Windows.Forms.Label();
             this.buttonPlay = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             this.buttonPlay.UseVisualStyleBackColor = true;
             this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
-            // Menu
+            // Menuprincipale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +74,10 @@
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.titel);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Menu";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Menuprincipale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

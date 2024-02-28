@@ -17,7 +17,7 @@ namespace AttentionGet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AttentionGet.Diplay.Menu());
+            Application.Run(new AttentionGet.Diplay.Menuprincipale());
         }
     }
 }

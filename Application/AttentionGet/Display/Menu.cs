@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AttentionGet.Diplay
 {
-    public partial class Menu : Form
+    public partial class Menuprincipale : Form
     {
-        public Menu()
+        public Menuprincipale()
         {
             InitializeComponent();
         }

@@ -1,4 +1,5 @@
-﻿using AttentionGet.Storage;
+﻿using AttentionGet.Diplay;
+using AttentionGet.Storage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -167,6 +168,21 @@ namespace AttentionGet
             GameTime.Start();
 
 
+        }
+
+        //Reviens au menu principale
+        private void buttonLeave_Click(object sender, EventArgs e)
+        {
+            // Créez une instance de Form1
+            Menuprincipale menu = new Menuprincipale();
+
+
+            //Desaffiche le menu
+            this.Hide();
+
+
+            //Affiche le form1
+            menu.Show();
         }
     }
 }

@@ -133,9 +133,10 @@
             this.buttonLeave.Name = "buttonLeave";
             this.buttonLeave.Size = new System.Drawing.Size(98, 25);
             this.buttonLeave.TabIndex = 6;
-            this.buttonLeave.Text = "Exit";
+            this.buttonLeave.Text = "Menu";
             this.buttonLeave.UseVisualStyleBackColor = true;
             this.buttonLeave.Visible = false;
+            this.buttonLeave.Click += new System.EventHandler(this.buttonLeave_Click);
             // 
             // Form1
             // 
@@ -151,7 +152,10 @@
             this.Controls.Add(this.CactusDouble);
             this.Controls.Add(this.Dino);
             this.Controls.Add(this.txtScore);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "T-Rex Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
