@@ -25,7 +25,7 @@ namespace AttentionGet
         //Position du top du sol
         private int groundTop;
         //Vitesse des obstacles
-        private int speedObstacle = 5;
+        private int speedObstacle = 6;
         //Etat du jeu
         private bool gameStatus = true;
 
@@ -155,7 +155,7 @@ namespace AttentionGet
             //Boutton
             buttonReplay.Visible = false;
             buttonReplay.Enabled = false;
-            buttonLeave.Visible = false;
+            buttonLeave.Visible = false; 
             buttonLeave.Enabled = false;
 
             //Image
