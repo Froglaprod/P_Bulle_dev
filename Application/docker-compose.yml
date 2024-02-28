@@ -36,8 +36,6 @@ services:
   # Conteneur de l'application
   app:
     # Informations pour build l'app
-    build:
-      # Permet de définir le répertoire sur lequel Docker se base pour build l'image
-      context: .
-      dockerfile: Dockerfile
+      # Utilise notre image de notr app
+    image: appdino
     container_name: dinogame
